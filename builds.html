@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сборки Minecraft — RTN</title>
+    <title>Сборки Minecraft — RTN Project</title>
     <style>
         :root {
             --bg: #f97401;
@@ -47,7 +47,8 @@
             border: var(--border);
             background: var(--fg);
             padding: 5px;
-            border-radius: 8px;        }
+            border-radius: 8px;
+        }
 
         .site-title {
             font-size: 1.8rem;
@@ -89,14 +90,8 @@
             color: var(--fg);
         }
 
-        /* Активная ссылка в меню */
-        nav a.active {
-            background: var(--bg);
-            color: var(--fg);
-            box-shadow: inset 0 0 0 2px var(--text);
-        }
-
-        main {            flex: 1;
+        main {
+            flex: 1;
             max-width: 800px;
             margin: 0 auto;
             width: 100%;
@@ -124,6 +119,45 @@
             font-size: 1rem;
         }
 
+        /* Блоки с IP адресами */
+        .ip-list {
+            margin: 1.5rem 0 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .ip-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .ip-card:hover {
+            border-color: var(--bg);
+        }
+
+        .ip-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .ip-address {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--bg);
+            word-break: break-all;
+            background: rgba(0,0,0,0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.2rem;
+        }
+
         /* Стили для сетки сборок */
         .builds-grid {
             display: grid;
@@ -145,7 +179,8 @@
         .build-card:hover {
             transform: translateY(-4px);
             border-color: var(--text);
-            background: rgba(255, 255, 255, 0.1);        }
+            background: rgba(255, 255, 255, 0.1);
+        }
 
         .build-card h2 {
             font-size: 1.3rem;
@@ -194,7 +229,8 @@
             .logo-container img { height: 50px; }
             .site-title { font-size: 1.4rem; }
             
-            nav ul {                flex-wrap: nowrap;
+            nav ul {
+                flex-wrap: nowrap;
                 overflow-x: auto;
                 justify-content: flex-start;
                 padding: 0.5rem;
@@ -208,6 +244,8 @@
             h1 { font-size: 1.4rem; margin-bottom: 1rem; }
             p { font-size: 0.95rem; }
             
+            .ip-address { font-size: 1.2rem; }
+            
             .builds-grid { grid-template-columns: 1fr; gap: 1rem; }
             .build-card { padding: 1.2rem; }
         }
@@ -218,7 +256,7 @@
         <div class="logo-container">
             <img src="logo.png" alt="RTN Logo">
         </div>
-        <div class="site-title">Russian Trees Network</div>
+        <div class="site-title">Russian Trees Network Project</div>
     </header>
 
     <nav>
@@ -232,8 +270,22 @@
 
     <main>
         <div class="content-block">
-            <h1>📦 Текущие сборки Minecraft</h1>
-            <p>Выберите подходящую версию для игры на нашем сервере. Все сборки оптимизированы и готовы к запуску.</p>
+            <h1>📦 Сервера и сборки</h1>
+            <p>Сейчас для игры доступно 2 сервера. Выберите подходящий и скопируйте IP для подключения:</p>
+            
+            <!-- Блок с IP адресами -->
+            <div class="ip-list">
+                <div class="ip-card">
+                    <span class="ip-title">🌲 Ванильный сервер (версия 26.1.1)</span>
+                    <span class="ip-address">vanilla.rtn.garden</span>
+                </div>
+                <div class="ip-card">
+                    <span class="ip-title">🔥 Модовый сервер (сборка Step Into The Darkness)</span>
+                    <span class="ip-address">mods.rtn.garden</span>
+                </div>
+            </div>
+
+            <p style="margin-top: -1rem;">Скачайте сборки ниже, чтобы играть с правильными настройками:</p>
             
             <div class="builds-grid">
                 
@@ -241,20 +293,21 @@
                 <div class="build-card">
                     <h2>Vanilla 26.1.1 + Shaders</h2>
                     <p>Классическая ванильная сборка с установленными шейдерами. Идеально для красивых скриншотов и спокойного исследования мира.</p>
-                    <a href="#" class="download-btn" target="_blank">⬇ Скачать (Google Drive)</a>                </div>
+                    <a href="https://drive.google.com/file/d/1BkKzX2YJfmALczLbxRqG-SrjxZltKZXk/view?usp=drivesdk" target="_blank" class="download-btn">⬇ Скачать (Google Drive)</a>
+                </div>
 
                 <!-- Сборка 2 -->
                 <div class="build-card">
                     <h2>Vanilla 26.1.1 (No Shaders)</h2>
                     <p>Облегчённая версия без графических дополнений. Максимальная производительность для слабых ПК или любителей оригинальной графики.</p>
-                    <a href="#" class="download-btn" target="_blank">⬇ Скачать (Google Drive)</a>
+                    <a href="https://drive.google.com/file/d/1DJTUc2ONe4AksG-K9VB8dsUnunJRN5_F/view?usp=drivesdk" target="_blank" class="download-btn">⬇ Скачать (Google Drive)</a>
                 </div>
 
                 <!-- Сборка 3 -->
                 <div class="build-card">
                     <h2>RTN: Step Into The Darkness</h2>
                     <p>Фирменная атмосферная сборка проекта. Уникальные моды, квесты и полное погружение в тёмное фэнтези RTN.</p>
-                    <a href="#" class="download-btn" target="_blank">⬇ Скачать (Google Drive)</a>
+                    <a href="404.html" class="download-btn">⬇ Скачать (Скоро)</a>
                 </div>
 
             </div>
@@ -262,7 +315,7 @@
     </main>
 
     <footer>
-        <p>RTN. Все права принадлежат Русским Ёлочкам. 2026 ∞</p>
+        <p>RTN Project. Все права принадлежат Русским Ёлочкам. 2026 ∞</p>
     </footer>
 </body>
 </html>

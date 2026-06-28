@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Описание — RTN</title>
+    <title>Описание — RTN Project</title>
     <style>
         :root {
             --bg: #f97401;
@@ -47,7 +47,8 @@
             border: var(--border);
             background: var(--fg);
             padding: 5px;
-            border-radius: 8px;        }
+            border-radius: 8px;
+        }
 
         .site-title {
             font-size: 1.8rem;
@@ -96,7 +97,8 @@
             width: 100%;
         }
 
-        .content-block {            background: var(--fg);
+        .content-block {
+            background: var(--fg);
             padding: 2rem;
             border-radius: 12px;
             border: var(--border);
@@ -112,9 +114,65 @@
             padding-bottom: 0.5rem;
         }
 
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
         p {
             margin-bottom: 1rem;
             font-size: 1rem;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Стили для IP адресов */
+        .ip-address-display {
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--bg);
+            background: rgba(0,0,0,0.2);
+            padding: 0.2rem 0.8rem;
+            border-radius: 6px;
+            margin: 0.2rem 0 0.5rem 0;
+            word-break: break-all;
+        }
+
+        .ip-block {
+            margin-bottom: 1rem;
+        }
+
+        /* Кнопка как на главной */
+        .btn-start {
+            display: block;
+            text-align: center;
+            background: var(--bg);
+            color: var(--fg);
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: var(--border);
+            transition: all 0.2s ease;
+            margin-top: 2rem;
+        }
+
+        .btn-start:hover {
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
+            transform: translateY(-2px);
         }
 
         footer {
@@ -127,54 +185,26 @@
         }
 
         @media (max-width: 600px) {
-            body {
-                padding: 0.5rem;
-            }
-
-            header {
-                margin-bottom: 1rem;
-                padding-bottom: 0.5rem;
-            }
-
-            .logo-container img {
-                height: 50px;
-            }
-
-            .site-title {
-                font-size: 1.4rem;
-            }
-
+            body { padding: 0.5rem; }
+            header { margin-bottom: 1rem; padding-bottom: 0.5rem; }
+            .logo-container img { height: 50px; }
+            .site-title { font-size: 1.4rem; }
+            
             nav ul {
-                flex-wrap: nowrap;                overflow-x: auto;
+                flex-wrap: nowrap;
+                overflow-x: auto;
                 justify-content: flex-start;
                 padding: 0.5rem;
                 gap: 0.5rem;
                 scrollbar-width: none;
             }
+            nav ul::-webkit-scrollbar { display: none; }
+            nav a { padding: 0.4rem 0.8rem; font-size: 0.85rem; flex-shrink: 0; }
             
-            nav ul::-webkit-scrollbar {
-                display: none;
-            }
-
-            nav a {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.85rem;
-                flex-shrink: 0;
-            }
-
-            .content-block {
-                padding: 1.2rem;
-                border-radius: 8px;
-            }
-
-            h1 {
-                font-size: 1.4rem;
-                margin-bottom: 1rem;
-            }
-            
-            p {
-                font-size: 0.95rem;
-            }
+            .content-block { padding: 1.2rem; border-radius: 8px; }
+            h1 { font-size: 1.4rem; margin-bottom: 1rem; }
+            h2 { font-size: 1.2rem; }
+            p, ul, ol { font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -183,7 +213,7 @@
         <div class="logo-container">
             <img src="logo.png" alt="RTN Logo">
         </div>
-        <div class="site-title">Russian Trees Network</div>
+        <div class="site-title">Russian Trees Network Project</div>
     </header>
 
     <nav>
@@ -194,10 +224,11 @@
             <li><a href="social.html">Соц.сети</a></li>
         </ul>
     </nav>
+    
     <main>
         <div class="content-block">
             <h1>О сервере</h1>
-            <p>Сервер Russian Trees Network (RTN) — это дружелюбное сообщество игроков в Minecraft, объединённых любовью к природе, строительству и совместным приключениям.</p>
+            <p>Сервер RTN Project — это дружелюбное сообщество игроков в Minecraft, объединённых любовью к природе, строительству и совместным приключениям.</p>
             <p>Мы создаём уютный и безопасный мир, где каждый может найти своё дерево, свой дом и своих друзей.</p>
             
             <h2>Сервер ориентирован на игроков, ценящих:</h2>
@@ -209,29 +240,25 @@
             </ul>
 
             <h2>Как подключиться?</h2>
-            <p>Наш сервер установлен на мощном компьютере. Доступ осуществляется (временно) через RadminVPN.</p>
+            <p>Наш сервер установлен на хостинге с мощным железом (пока что на бесплатном тарифе). Для подключения используйте один из адресов ниже:</p>
             
-            <h2>Инструкция по подключению:</h2>
-            <ol>
-                <li>Скачайте и установите RadminVPN.</li>
-                <li>Добавьте новую сеть:
-                    <ul>
-                        <li><strong>Имя сети:</strong> RTN-streams</li>
-                        <li><strong>Пароль:</strong> 92869286</li>
-                    </ul>
-                </li>
-                <li>Скачайте лаунчер по кнопке ниже.</li>
-                <li>Положите файл в отдельную папку и запустите.</li>
-                <li>После загрузки файлов запустите Minecraft.exe из папки.</li>
-                <li>Добавьте локальную учётную запись и играйте!</li>
-            </ol>
+            <div class="ip-block">
+                <strong>🌲 Ванильный сервер (версия 26.1.1):</strong><br>
+                <span class="ip-address-display">vanilla.rtn.garden</span>
+            </div>
 
-            <a href="RTN_launcher.bat" class="download-btn">📥 Скачать лаунчер</a>
+            <div class="ip-block">
+                <strong>🔥 Модовый сервер (сборка Step Into The Darkness):</strong><br>
+                <span class="ip-address-display">mods.rtn.garden</span>
+            </div>
+
+            <!-- Кнопка Начать играть -->
+            <a href="builds.html" class="btn-start">🌲 Начать играть</a>
         </div>
     </main>
 
     <footer>
-        <p>RTN. Все права принадлежат Русским Ёлочкам. 2026 ∞</p>
+        <p>RTN Project. Все права принадлежат Русским Ёлочкам. 2026 ∞</p>
     </footer>
 </body>
 </html>
