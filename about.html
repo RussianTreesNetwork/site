@@ -114,45 +114,64 @@
             padding-bottom: 0.5rem;
         }
 
-        h2 {
-            font-size: 1.4rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1rem;
         }
 
-        ul, ol {
-            margin: 1rem 0 1rem 1.5rem;
-            font-size: 1rem;
+        /* Стилизация блоков в стиле social.html */
+        .info-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        li {
-            margin-bottom: 0.4rem;
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.2s ease;
         }
 
-        /* Стили для IP адресов */
-        .ip-address-display {
-            display: inline-block;
-            font-size: 1.2rem;
-            font-weight: 600;
+        .info-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Специальный стиль для IP-адресов (оранжевый текст) */
+        .ip-highlight {
             color: var(--bg);
-            background: rgba(0,0,0,0.2);
-            padding: 0.2rem 0.8rem;
-            border-radius: 6px;
-            margin: 0.2rem 0 0.5rem 0;
-            word-break: break-all;
+            font-weight: bold;
+            font-size: 0.95rem;
         }
 
-        .ip-block {
-            margin-bottom: 1rem;
-        }
-
-        /* Кнопка как на главной */
+        /* Кнопка "Начать играть" */
         .btn-start {
             display: block;
             text-align: center;
@@ -185,11 +204,23 @@
         }
 
         @media (max-width: 600px) {
-            body { padding: 0.5rem; }
-            header { margin-bottom: 1rem; padding-bottom: 0.5rem; }
-            .logo-container img { height: 50px; }
-            .site-title { font-size: 1.4rem; }
-            
+            body {
+                padding: 0.5rem;
+            }
+
+            header {
+                margin-bottom: 1rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .logo-container img {
+                height: 50px;
+            }
+
+            .site-title {
+                font-size: 1.4rem;
+            }
+
             nav ul {
                 flex-wrap: nowrap;
                 overflow-x: auto;
@@ -198,13 +229,43 @@
                 gap: 0.5rem;
                 scrollbar-width: none;
             }
-            nav ul::-webkit-scrollbar { display: none; }
-            nav a { padding: 0.4rem 0.8rem; font-size: 0.85rem; flex-shrink: 0; }
             
-            .content-block { padding: 1.2rem; border-radius: 8px; }
-            h1 { font-size: 1.4rem; margin-bottom: 1rem; }
-            h2 { font-size: 1.2rem; }
-            p, ul, ol { font-size: 0.95rem; }
+            nav ul::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+                flex-shrink: 0;
+            }
+
+            .content-block {
+                padding: 1.2rem;
+                border-radius: 8px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+            }
+
+            .info-item {
+                padding: 0.8rem;
+                align-items: flex-start;
+            }
+
+            .info-title {
+                font-size: 1rem;
+            }
+
+            .info-desc {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -224,32 +285,70 @@
             <li><a href="social.html">Соц.сети</a></li>
         </ul>
     </nav>
-    
+
     <main>
         <div class="content-block">
             <h1>О сервере</h1>
-            <p>Сервер RTN Project — это дружелюбное сообщество игроков в Minecraft, объединённых любовью к природе, строительству и совместным приключениям.</p>
-            <p>Мы создаём уютный и безопасный мир, где каждый может найти своё дерево, свой дом и своих друзей.</p>
             
-            <h2>Сервер ориентирован на игроков, ценящих:</h2>
-            <ul>
-                <li>🌲 Дружелюбную атмосферу</li>
-                <li>🏰 Качественные постройки</li>
-                <li>🎨 Удобство и красивый стиль домов</li>
-                <li>💬 Русскоязычное общение</li>
-            </ul>
+            <div class="info-links">
+                
+                <!-- Блок с описанием сервера -->
+                <div class="info-item">
+                    <span class="info-icon">🌲</span>
+                    <div class="info-content">
+                        <div class="info-title">Что такое RTN?</div>
+                        <div class="info-desc">Сервер Russian Trees Network (RTN) — это дружелюбное сообщество игроков в Minecraft, объединённых любовью к природе, строительству и совместным приключениям. Мы создаём уютный и безопасный мир, где каждый может найти своё дерево, свой дом и своих друзей.</div>
+                    </div>
+                </div>
 
-            <h2>Как подключиться?</h2>
-            <p>Наш сервер установлен на хостинге с мощным железом (пока что на бесплатном тарифе). Для подключения используйте один из адресов ниже:</p>
-            
-            <div class="ip-block">
-                <strong>🌲 Ванильный сервер (версия 26.1.1):</strong><br>
-                <span class="ip-address-display">vanilla.rtn.garden</span>
-            </div>
+                <!-- Блок с ценностями -->
+                <div class="info-item">
+                    <span class="info-icon">💎</span>
+                    <div class="info-content">
+                        <div class="info-title">Что для нас главное:</div>
+                        <div class="info-desc">🌲 Дружелюбная атмосфера<br>🏰 Качественные постройки<br>🎨 Удобство и красивый стиль домов<br>💬 Русскоязычное общение</div>
+                    </div>
+                </div>
 
-            <div class="ip-block">
-                <strong>🔥 Модовый сервер (сборка Step Into The Darkness):</strong><br>
-                <span class="ip-address-display">mods.rtn.garden</span>
+                <!-- НОВЫЙ БЛОК: Ванильный сервер -->
+                <div class="info-item">
+                    <span class="info-icon">🪵</span>
+                    <div class="info-content">
+                        <div class="info-title">Ванильный сервер (с дополнениями)</div>
+                        <div class="info-desc">
+                            Система телепортации, заточка снаряжения, рпг-система, мощные серверные боссы, прокачка уровней, награды за еженедельный топ игроков (по уровню и по балансу) с наградами.<br><br>
+                            На сервере установлены плагины собственной разработки RTN Project.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- НОВЫЙ БЛОК: Модовый сервер -->
+                <div class="info-item">
+                    <span class="info-icon">⚙️</span>
+                    <div class="info-content">
+                        <div class="info-title">Модовый сервер (Step Into The Darkness)</div>
+                        <div class="info-desc">
+                            Модпак на основе Create, Applied Energistics 2, Replication, Tacz, Poinblank и другие.<br><br>
+                            На сервере установлены моды собственной разработки RTN Project.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок с подключением и IP -->
+                <div class="info-item">
+                    <span class="info-icon">🔗</span>
+                    <div class="info-content">
+                        <div class="info-title">Как подключиться?</div>
+                        <div class="info-desc">
+                            Наш сервер установлен на хостинге с мощным железом (пока что на бесплатном тарифе).<br><br>
+                            <strong>🌲 Ванильный сервер (версия 26.1.1):</strong><br>
+                            <span class="ip-highlight">vanilla.rtn.garden</span><br><br>
+                            <strong>🔥 Модовый сервер (сборка Step Into The Darkness):</strong><br>
+                            <span class="ip-highlight">mods.rtn.garden</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Кнопка Начать играть -->
